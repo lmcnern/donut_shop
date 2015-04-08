@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Ubuntu:700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="stylesheet.css">
   <meta charset="UTF-8">
   <title>Top Pot Calculator</title>
 </head>
-  <h1 style="color: #ff3e96; text-align: center;">Donut Calculator</h1>
+  <h1 style="text-align: center;">Top Pot Donut Calculator</h1>
   <p></p>
   <h4>New Data Input</h4>
   <form name="newLocationInput" id="form1">
-    <label for="newLocation">Location:</label>
+    <label for="newLocation" id="label">Location:</label>
     <input type="text" id="newLocation" name="newLocation" placeholder="Input New Location" >
     <p></p>
     <label for="newMinCustomersInput">Min Customers:</label>
@@ -20,7 +23,7 @@
     <label for="newAverageDonutInput">Average Donuts:</label>
     <input type="number" id="newAverageDonut" name="newAverageDonut" placeholder="Input Average Donuts">
     <p></p>
-    <button type="submit" id="userSubmit">Submit</button>
+    <button type="submit" id="userSubmit">submit to generate table</button>
   </form>
   <p></p>
   <tbody>
