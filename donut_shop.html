@@ -4,137 +4,63 @@
   <meta charset="UTF-8">
   <title>Top Pot Calculator</title>
 </head>
-<h1 style="color: #ff3e96; text-align: center;">Donut Calculator</h1>
-<p>
+  <h1 style="color: #ff3e96; text-align: center;">Donut Calculator</h1>
+  <p></p>
+  <h4>New Data Input</h4>
+  <form name="newLocationInput" id="form1">
+    <label for="newLocation">Location:</label>
+    <input type="text" id="newLocation" name="newLocation" placeholder="Input New Location" >
+    <p></p>
+    <label for="newMinCustomersInput">Min Customers:</label>
+    <input type="number" id="newMinCustomers" name="newMinCustomers" placeholder="Input Min Customers">
+    <p></p>
+    <label for="newMaxCustomersInput">Max Customers:</label>
+    <input type="number" id="newMaxCustomers" name="newMaxCustomers" placeholder="Input Max Customers">
+    <p></p>
+    <label for="newAverageDonutInput">Average Donuts:</label>
+    <input type="number" id="newAverageDonut" name="newAverageDonut" placeholder="Input Average Donuts">
+    <p></p>
+    <button type="submit" id="userSubmit">Submit</button>
+  </form>
+  <p></p>
   <tbody>
-        <table border="1px">
-  <tr>
-     <td> </td>
-     <td>7:00 AM</td>
-     <td>8:00 AM</td>
-     <td>9:00 AM</td>
-     <td>10:00 AM</td>
-     <td>11:00 AM</td>
-     <td>12:00 PM</td>
-     <td>1:00 PM</td>
-     <td>2:00 PM</td>
-     <td>3:00 PM</td>
-     <td>4:00 PM</td>
-     <td>5:00 PM</td>
-     <td>6:00 PM</td>
-     <td>Total</td>
-  </tr>
-  <tr id='downtown'>
-    <td>Downtown</td>
-
-</tr>
-  <tr id='capitol'>
-     <td>Capitol Hill</td>
-
-
-</tr>
- <tr id='slu'>
-     <td>South Lake Union</td>
-
-
-</tr>
-
- <tr id='wed'>
-     <td>Wedgewood</td>
-
-
-</tr>
-
- <tr id='bal'>
-     <td>Ballard</td>
-
-</tr>
-<script>
-
-var TopPotModel = function(name, minCustomers, maxCustomers, averageDonuts, dayTotal) {
-  this.name = name;
-  this.minCustomers = minCustomers;
-  this.maxCustomers = maxCustomers;
-  this.averageDonuts = averageDonuts;
-  this.hourlyTotals = [];
-  this.dayTotal = 0;
-
-  this.generateRandom = function() {
-    var numCustomers = (Math.random() * (this.maxCustomers - this.minCustomers)) + this.minCustomers;
-    var hourTotal = Math.floor(numCustomers * this.averageDonuts);
-    this.hourlyTotals.push(hourTotal);
-    this.dayTotal += hourTotal;
-    return this.hourlyTotals;
-  };
-
-  this.multiDonuts = function() {
-    for (var i = 0 ; i < 12 ; i++) {
-      console.log(this.generateRandom());
-    }
-  };
-
-  this.writeToHTML = function() {
-    //var donutTotal = this.TopPotModel();
-    var myEl = document.getElementById(this.name);
-
-    for (var i = 0; i <= this.hourlyTotals.length; i++) {
-      var el = document.createElement('td');
-      el.textContent = this.hourlyTotals[i];
-      myEl.appendChild(el);
-  }
-  el.textContent = this.dayTotal;
-  myEl.appendChild(el);
-
-};
-};
-
-var downtownCustomers = new TopPotModel('downtown', 8, 43, 4.5);
-var capitolCustomers = new TopPotModel('capitol', 4, 37, 2);
-var sluCustomers = new TopPotModel('slu', 9, 23, 6.33);
-var wedgeCustomers = new TopPotModel('wed', 2, 28, 1.25);
-var ballardCustomers = new TopPotModel('bal', 8, 58, 3.75);
-
-downtownCustomers.multiDonuts();
-downtownCustomers.writeToHTML();
-capitolCustomers.multiDonuts();
-capitolCustomers.writeToHTML();
-sluCustomers.multiDonuts();
-sluCustomers.writeToHTML();
-wedgeCustomers.multiDonuts();
-wedgeCustomers.writeToHTML();
-ballardCustomers.multiDonuts();
-ballardCustomers.writeToHTML();
-
-
-
-
-
-//(8, 43);
-//var CapitolHillCustomers = TopPotModel.prototype.generateRandom(4,37);
-//var SLUCustomers = TopPotModel.prototype.generateRandom(2, 23);
-//var WedgewoodCustomers = TopPotModel.prototype.generateRandom(2, 28);
-//var BallardCustomers = TopPotModel.prototype.generateRandom(8, 58);
-
-//console.log(DowntownCustomers);
-//console.log(CapitolHillCustomers);
-//console.log(SLUCustomers);
-//console.log(WedgewoodCustomers);
-//console.log(BallardCustomers);
-
-//console.log(DowntownLocation.generateRandom(8, 43));
-//console.log(CapitolHillLocation.generateRandom(4, 37));
-//console.log(SLULocation.generateRandom(9, 23));
-//console.log(WedgewoodLocation.generateRandom(2, 28));
-//console.log(BallardLocation.generateRandom(8, 58));
-
-//var DowntownDonuts 4.5);
-//var CapitolHillDonuts  2);
-//var SLUDonuts  6.33);
-//var WedgewoodDonuts 1.25);
-//var BallardDonuts 3.75);
-
-
-
-</script>
+    <table border="1px" id='newUserRow'>
+     <!--  <tr>
+        <td> </td>
+        <td>7:00 AM</td>
+        <td>8:00 AM</td>
+        <td>9:00 AM</td>
+        <td>10:00 AM</td>
+        <td>11:00 AM</td>
+        <td>12:00 PM</td>
+        <td>1:00 PM</td>
+        <td>2:00 PM</td>
+        <td>3:00 PM</td>
+        <td>4:00 PM</td>
+        <td>5:00 PM</td>
+        <td>6:00 PM</td>
+        <td>Total</td>
+      </tr>
+ <tr id='downtown'>
+        <td>Downtown</td>
+      </tr>
+      <tr id='capitol'>
+        <td>Capitol Hill</td>
+      </tr>
+      <tr id='slu'>
+        <td>South Lake Union</td>
+      </tr>
+      <tr id='wed'>
+        <td>Wedgewood</td>
+      </tr>
+      <tr id='bal'>
+        <td>Ballard</td>
+      </tr>
+      <tr >
+      </tr>-->
+    </table>
+  </tbody>
 </body>
+  <script src="donut.js"></script>
+  <script src="events.js"></script>
 </html>
