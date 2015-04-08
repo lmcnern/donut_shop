@@ -1,3 +1,4 @@
+
 var TopPotModel = function(name, minCustomers, maxCustomers, averageDonuts, dayTotal) {
   this.name = name;
   this.minCustomers = minCustomers;
@@ -9,7 +10,7 @@ var TopPotModel = function(name, minCustomers, maxCustomers, averageDonuts, dayT
   this.generateRandom = function() {
     var numCustomers = (Math.random() * (this.maxCustomers - this.minCustomers)) + this.minCustomers;
     var hourTotal = Math.floor(numCustomers * this.averageDonuts);
-    //this.hourlyTotals.push(hourTotal);
+    this.hourlyTotals.push(hourTotal);
     this.dayTotal += hourTotal;
     return this.hourlyTotals;
   };
@@ -35,22 +36,25 @@ var TopPotModel = function(name, minCustomers, maxCustomers, averageDonuts, dayT
 };
 };
 
-var downtownCustomers = new TopPotModel('downtown', 8, 43, 4.5);
-var capitolCustomers = new TopPotModel('capitol', 4, 37, 2);
-var sluCustomers = new TopPotModel('slu', 9, 23, 6.33);
-var wedgeCustomers = new TopPotModel('wed', 2, 28, 1.25);
-var ballardCustomers = new TopPotModel('bal', 8, 58, 3.75);
+TopPotModel.prototype.render = function() {
+  var row = document.createElement('tr');
 
-// downtownCustomers.multiDonuts();
-// downtownCustomers.writeToHTML();
-// capitolCustomers.multiDonuts();
-// capitolCustomers.writeToHTML();
-// sluCustomers.multiDonuts();
-// sluCustomers.writeToHTML();
-// wedgeCustomers.multiDonuts();
-// wedgeCustomers.writeToHTML();
-// ballardCustomers.multiDonuts();
-// ballardCustomers.writeToHTML();
+  var columnone = document.createElement('td');
+  columnone.textContent = this.name;
+  row.appendChild(columnone);
+
+  for (var i = 0; i <= this.hourlyTotals.length; i++) {
+      var el = document.createElement('td');
+      el.textContent = this.hourlyTotals[i];
+      row.appendChild(el);
+  }
+  el.textContent = this.dayTotal;
+  row.appendChild(el);
+
+  return row;
+}
+
+
 
 window.TopPotModel = TopPotModel;
 
@@ -62,14 +66,6 @@ window.TopPotModel = TopPotModel;
 // }
 
 // }
-
-
-
-//(8, 43);
-//var CapitolHillCustomers = TopPotModel.prototype.generateRandom(4,37);
-//var SLUCustomers = TopPotModel.prototype.generateRandom(2, 23);
-//var WedgewoodCustomers = TopPotModel.prototype.generateRandom(2, 28);
-//var BallardCustomers = TopPotModel.prototype.generateRandom(8, 58);
 
 //console.log(DowntownCustomers);
 //console.log(CapitolHillCustomers);

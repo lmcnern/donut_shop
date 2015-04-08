@@ -7,9 +7,9 @@
   <h1 style="color: #ff3e96; text-align: center;">Donut Calculator</h1>
   <p></p>
   <h4>New Data Input</h4>
-  <form name="newLocationInput">
+  <form name="newLocationInput" id="form1">
     <label for="newLocation">Location:</label>
-    <input type="text" id="newLocation" name="newLocation" placeholder="Input New Location">
+    <input type="text" id="newLocation" name="newLocation" placeholder="Input New Location" >
     <p></p>
     <label for="newMinCustomersInput">Min Customers:</label>
     <input type="number" id="newMinCustomers" name="newMinCustomers" placeholder="Input Min Customers">
@@ -24,8 +24,8 @@
   </form>
   <p></p>
   <tbody>
-    <table border="1px">
-      <tr>
+    <table border="1px" id='newUserRow'>
+     <!--  <tr>
         <td> </td>
         <td>7:00 AM</td>
         <td>8:00 AM</td>
@@ -41,7 +41,7 @@
         <td>6:00 PM</td>
         <td>Total</td>
       </tr>
-      <tr id='downtown'>
+ <tr id='downtown'>
         <td>Downtown</td>
       </tr>
       <tr id='capitol'>
@@ -56,11 +56,11 @@
       <tr id='bal'>
         <td>Ballard</td>
       </tr>
-      <tr id='newUserRow'>
-      </tr>
+      <tr >
+      </tr>-->
     </table>
   </tbody>
-  <script src="events.js"></script>
-  <script src="donut.js"></script>
 </body>
+  <script src="donut.js"></script>
+  <script src="events.js"></script>
 </html>
